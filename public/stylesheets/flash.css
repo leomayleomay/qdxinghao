@@ -1,0 +1,34 @@
+p.notice{
+  position:relative;
+  display:block;
+  background: #e5f993 url(../img/icon_notice.gif) no-repeat 10px 11px;
+  border: 1px solid #9bac55;
+  padding:10px 10px 10px 40px;
+  color: #688006;
+  font-size: 13px;}
+p.error {
+  position:relative;
+  display:block;
+  background: #f6b9b9 url(../img/icon_error.gif) no-repeat 10px 11px;
+  border: 1px solid #e18484;
+  padding:10px 10px 10px 40px;
+  color: #c32727;
+  font-size: 13px; }
+
+p.broadcast {
+  position:relative;
+  display:block;
+  background: #d4ebfa;
+  padding:10px 10px;
+  color: #4b6bab;
+  font-size: 13px; }
+p.error span, p.notice span, p.broadcast span { 
+  position: absolute;
+  right:7px;
+  top:7px;
+  font-weight:bold;
+  font-size:10px;
+  font-family:Arial, Helvetica, sans-serif;
+  display:block;
+  padding:5px;
+  cursor:pointer;}

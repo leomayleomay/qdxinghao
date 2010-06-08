@@ -1,0 +1,24 @@
+<%= render :partial => "sidebar" %>
+
+<h3>用户列表</h3>
+
+<br>
+
+<table border='0' cellspacing='0' cellpadding='0' id='data'>
+  <tr>
+    <th>用户名</th>
+    <th>Email</th>
+    <th>权限</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= h user.login %></td>
+      <td><%= h user.email %></td>
+      <td><%= h user.role %></td>
+      <td><%= link_to "详情", user_path(user) %></td>
+      <td><%= link_to "编辑", edit_user_path(user) %></td>
+      <td><%= link_to '删除', user, :confirm => '您确定删除么?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

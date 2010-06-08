@@ -1,0 +1,30 @@
+<%= sidebar_for("Recruitment")%>
+
+<table border="0", cellpadding="0" cellspacing="0" id="data">
+  <tr>
+    <th>NO.</th>
+    <th>职位名称</th>
+    <th>工作地点</th>
+    <th>招聘人数</th>
+    <th>月薪水</th>
+    <th>截止日期</th>
+    <th>岗位描述</th>
+  </tr>
+
+<% @recruitments.each do |recruitment| %>
+  <tr>
+    <td><%=h recruitment.id %></td>
+    <td><%=h recruitment.title %></td>
+    <td><%=h recruitment.address %></td>
+    <td><%=h recruitment.amount %></td>
+    <td><%=h recruitment.salary %></td>
+    <td><%=h recruitment.ended_at %></td>
+    <td><%=h recruitment.description %></td>
+    <td><%= link_to '详情', recruitment %></td>
+    <% if can? :edit, recruitment%>
+      <td><%= link_to '编辑', edit_recruitment_path(recruitment) %></td>
+      <td><%= link_to '删除', recruitment, :confirm => '确定删除么?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

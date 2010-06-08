@@ -1,0 +1,8 @@
+<%= render :partial => "sidebar" %>
+
+<h3>注册新账户</h3>
+<% @user.password = @user.password_confirmation = nil %>
+
+<br>
+
+<%= render :partial => "form" %>

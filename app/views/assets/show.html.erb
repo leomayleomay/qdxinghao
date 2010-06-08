@@ -1,0 +1,12 @@
+<%= sidebar_for("Asset") %>
+
+<p>
+  <b>资源名称:</b>
+  <%=h @asset.name %>
+</p>
+
+<% if can? :manage, @asset %>
+  <%= link_to '编辑', edit_asset_path(@asset) %> |
+  <%= link_to '删除', @asset, :confirm => "确定删除么？", :method => :delete %> |
+<% end %>
+<%= link_to '资源列表', assets_path %>

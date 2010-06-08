@@ -1,0 +1,5 @@
+<ul class="filetree">
+  <% Category.for("broadcast").roots.each do |root| %>
+    <%= tree_view(root) %>
+  <% end %>
+</ul>

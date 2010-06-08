@@ -1,0 +1,5 @@
+<ul>
+  <% Page.all.each do |page| %>
+    <li><%= link_to page.title, "/about_us/#{page.title}"%></li>
+  <% end %>
+</ul>

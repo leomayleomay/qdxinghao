@@ -1,0 +1,15 @@
+<% semantic_form_for(@user) do |f| -%>
+  <% f.inputs do %>
+    <%= f.input :login, :label => "用户名" %>
+    <%= f.input :email, :label => "电子邮箱" %>
+    <%= f.input :password, :label => "密码", :as => :password %>
+    <%= f.input :password_confirmation, :label => "请再次输入密码", :as => :password %>
+    <% if can? :manage, @user %>
+      <%= f.input :role, :label => "权限", :as => :radio, :collection => [["普通用户", "normal"], ["管理员", "admin"]]%>
+    <% end %>
+  <% end %>
+
+  <% f.buttons do %>
+    <%= f.commit_button '确定'%>
+  <% end %>
+<% end -%>

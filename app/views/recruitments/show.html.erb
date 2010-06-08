@@ -1,0 +1,38 @@
+<%= sidebar_for("Recruitment")%>
+
+<p>
+  <b>职位名称:</b>
+  <%=h @recruitment.title %>
+</p>
+
+<p>
+  <b>工作地点:</b>
+  <%=h @recruitment.address %>
+</p>
+
+<p>
+  <b>招聘人数:</b>
+  <%=h @recruitment.amount %>
+</p>
+
+<p>
+  <b>月薪水:</b>
+  <%=h @recruitment.salary %>
+</p>
+
+<p>
+  <b>截止日期:</b>
+  <%=h @recruitment.ended_at %>
+</p>
+
+<p>
+  <b>岗位描述:</b>
+  <%=@recruitment.description %>
+</p>
+
+<% if can? :manage, Recruitment %>
+  <%= link_to '编辑', edit_recruitment_path(@recruitment) %> |
+  <%= link_to '删除', @recruitment, :confirm => "确定删除么？", :method => :delete %> |
+<% end %>
+
+<%= link_to '招聘信息列表', recruitments_path %>

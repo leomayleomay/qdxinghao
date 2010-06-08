@@ -1,0 +1,13 @@
+<% semantic_form_for(@category) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :parent_id, :label => "父类别", :as => :select, :collection => @parents_for_select, :include_blank => false %><br/>
+    <%= f.input :name, :label => "名称" %>
+    <%= f.input :model, :as => :hidden, :value => @category_model %><br/>
+  <% end %>
+
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>
+
+<%= link_to '类别列表', categories_path %>

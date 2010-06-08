@@ -1,0 +1,7 @@
+<h3>搜索结果</h3>
+
+<br>
+
+<% @objects.each do |object| %>
+  <%= link_to object.to_s, object%>
+<% end %>

@@ -1,0 +1,22 @@
+<%= sidebar_for("Page")%>
+
+<h3><%= h @page.title %></h3>
+
+<br />
+<br />
+
+新闻来源:<%= h @page.source %> 点击数:<%= h @page.hits.size %> 更新时间:<%= h @page.updated_at %>
+<hr>
+<br />
+<br />
+
+<p><%= @page.body %></p>
+
+<% if can? :manage, @page %>
+  <hr>
+  <br />
+  <br />
+
+  <%= link_to '编辑', edit_page_path(@page) %> |
+  <%= link_to '删除', @page, :confirm => '确定删除么？', :method => :delete%>
+<% end %>

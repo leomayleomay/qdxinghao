@@ -1,0 +1,13 @@
+<% semantic_form_for(@order) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :amount, :as => :numeric, :label => "预定数量" %>
+    <%= f.input :preorder_date, :label => "预定日期", :include_blank => false, :use_month_numbers => true %>
+    <%= f.input :description, :label => "预定说明", :input_html => {:class => "mceEditor"} %>
+    <%= f.input :user_id, :value => @order.user_id || current_user.id, :as => :hidden %>
+    <%= f.input :product_id, :value => @product.id, :as => :hidden %>
+  <% end %>
+
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>

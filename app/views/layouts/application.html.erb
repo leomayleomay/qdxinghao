@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= stylesheet_link_tag "style"%>
+    <%= stylesheet_link_tag 'jquery.treeview' %>
+    <%= stylesheet_link_tag 'flash', 'table'%>
+    <%= javascript_include_tag 'jquery.min', 'jquery.cycle', 'jquery.treeview.min', 'custom', 'flash'%>
+
+    <%= include_tiny_mce_if_needed %>
+    <%= formtastic_stylesheet_link_tag %>
+
+    <%= yield :head%>
+
+    <title>青岛星海精细化工有限责任公司 - <%= yield(:title) %></title>
+
+    <script type='text/javascript'>
+      $('#slideshow').cycle({fx:'fade', speed:'fast', timeout:2000, next:'#next', prev:'#prev'});
+    </script>
+  </head>
+
+  <body>
+    <%= render :partial => "users/user_bar" %>
+    <div id="page">
+      <div id="header">
+        <%= image_tag "logo.jpg", :width => "300px", :alt => "DoubleStar"%>
+        <%= image_tag "banner.jpg", :width => "900px", :alt => "星海精细化工"%>
+      </div>
+      <div id="nav">
+        <ul>
+          <li class=<%= "selected" if params[:controller] == "home" %>><%= link_to "站点首页", root_path %></li>
+          <li class=<%= "selected" if params[:controller] == "pages" %>><%= link_to "关于我们", "/about_us/公司简介" %></li>
+          <li class=<%= "selected" if params[:controller] == "broadcasts" %>><%= link_to "新闻中心", broadcasts_path %></li>
+          <li class=<%= "selected" if params[:controller] == "products" %>><%= link_to "产品展示", products_path %></li>
+          <li class=<%= "selected" if params[:controller] == "assets" %>><%= link_to "资源下载", assets_path %></li>
+          <li class=<%= "selected" if params[:controller] == "recuritments" %>><%= link_to "人才招聘", recruitments_path %></li>
+          <li class=<%= "selected" if params[:controller] == "messages" %>><%= link_to "信息反馈", messages_path %></li>
+          <% if can? :manage, Category %>
+            <li class=<%= "selected" if params[:controller] == "categories" %>><%= link_to "类别", categories_path %></li>
+          <% end %>
+          <li><%= render :partial => "common/search"%></li>
+        </ul>
+      </div>
+
+      <div id="main"> 
+        <div id="content-wrapper"> 
+          <div id="content">
+            <% flash.each do |key, msg| %>
+              <p class="<%=key%>"><%= h msg%><span>X</span></p>
+            <% end %>
+            <p><small><%= render_crumbs unless %w(home sessions users categories orders search).include?(controller_name) %></small></p>
+            <%= yield %>
+          </div>
+        </div>
+        <div id="sidebar-wrapper"> 
+          <div id="sidebar"> 
+            <div class="spot">
+              <p><%= yield :sidebar%></p>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div style="clear:both"></div> 
+    </div>
+
+    <div id="footer-wrapper">
+      <div id="footer">
+        <p>
+          友情链接:<a href="http://www.doublestar.com.cn">青岛双星集团</a>
+        </p>
+        <p>
+          青岛星海精细化工有限责任公司 © 2008-2010 版权所有<a href="http://www.miibeian.gov.cn/">鲁ICP备09029957号</a>
+          邮件：fangjingjing1202@163.com 电话：86 0532 82538699　传真：86 0532 82538626 地址：青岛即墨市大信镇新胜庄
+        </p>
+      </div> 
+    </div>
+  </body>
+</html>

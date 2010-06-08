@@ -1,0 +1,26 @@
+<%= sidebar_for("Page")%>
+
+<h3>页面列表</h3>
+
+<br />
+
+<table border="0" cellpadding="0" cellspacing="0" id="data">
+  <tr>
+    <th>页面名称</th>
+    <th>浏览次数</th>
+    <th>来源</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr class="<%= cycle :odd, :even %>">
+    <td><%=h page.title %></td>
+    <td><%=h page.hits.size %></td>
+    <td><%=h page.source %></td>
+    <td><%= link_to '详情', page %></td>
+    <% if can? :manage, page %>
+      <td><%= link_to '编辑', edit_page_path(page) %></td>
+      <td><%= link_to '删除', page, :confirm => '确定删除么?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

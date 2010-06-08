@@ -1,0 +1,16 @@
+<% semantic_form_for(@recruitment) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :title, :label => "职位名称"%>
+    <%= f.input :address, :label => "工作地点"%>
+    <%= f.input :amount, :label => "招聘人数"%>
+    <%= f.input :salary, :label => "月薪水"%>
+    <%= f.input :ended_at, :label => "截止日期", :include_blank => false, :use_month_numbers => true %>
+    <%= f.input :description, :label => "岗位描述", :input_html => {:class => "mceEditor"}%>
+  <% end %>
+
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>
+
+<%= link_to '招聘信息列表', recruitments_path %>

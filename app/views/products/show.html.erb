@@ -1,0 +1,44 @@
+<%= sidebar_for("Product")%>
+
+<table id="data" border='0' cellspacing='0' cellpadding='0'>
+  <tr>
+    <th rowspan=7>
+      <%= link_to image_tag(@product.image(:medium)), @product.image(:original), :target=> "_blank"%>
+    </th>
+    <td><strong>名称：</strong></strong></td>
+    <td><%=h @product.name %></td>
+  </tr>
+  <tr>
+    <td><strong>编号：</strong></td>
+    <td><%=h @product.serial_number%></td>
+  </tr>
+  <tr>
+    <td><strong>价格：</strong></td>
+    <td><%=h @product.price %></td>
+  </tr>
+  <tr>
+    <td><strong>出品公司：</strong></td>
+    <td><%=h @product.vendor %></td>
+  </tr>
+  <tr>
+    <td><strong>时间：</strong></td>
+    <td><%=h @product.created_at %></td>
+  </tr>
+  <tr>
+    <td><strong>购买：</strong></td>
+    <td><%= link_to '在线订购', preorder_path(@product) %></td>
+  </tr>
+  <tr>
+    <td><strong>产品描述：</strong></td>
+    <td><%= @product.description%></td>
+  </tr>
+</table>
+
+<hr style="border:dotted;">
+
+<%= neighbours(@product) %>
+
+<% if can? :manage, @product %>
+  <%= link_to '编辑', edit_product_path(@product) %> |
+  <%= link_to '删除', @product, :confirm => "确定删除么？", :method => :delete %>
+<% end %>

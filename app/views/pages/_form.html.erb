@@ -1,0 +1,12 @@
+<% semantic_form_for @page do |f| %>
+  <% f.inputs do %>
+    <%= f.input :title, :label => '名称' %>
+    <%= f.input :source, :label => '来源' %>
+    <%= f.input :body, :label => '内容', :input_html => {:class => "mceEditor"} %>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button "确定"%>
+  <% end %>
+<% end %>
+
+<%= link_to '页面列表', pages_path %>

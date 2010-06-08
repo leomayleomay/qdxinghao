@@ -1,0 +1,16 @@
+<% semantic_form_for(@asset, :html => {:multipart => true}) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :name, :label => "名称" %> <br/>
+    <%= f.input :category_ids, 
+                :label => "所属类别", 
+                :as => :check_boxes, 
+                :collection => Category.for("asset") %><br/>
+    <%= f.input :attachment, :label => "上传文件", :as => :file %>
+    <%= f.input :description, :label => "说明", :input_html => {:class => "mceEditor"}%>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button "确定"%>
+  <% end %>
+<% end %>
+
+<%= link_to '资源列表', assets_path %>

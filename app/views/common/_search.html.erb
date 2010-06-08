@@ -1,0 +1,13 @@
+<% form_tag(search_path, :method => "get") do %>
+  <%= text_field_tag(:query, '', :size => 10)%>
+    <%= select_tag (:object, options_for_select([['产品', "product"], ['新闻', "broadcast"], ['下载', "asset"]]))%>
+    <%= submit_tag "GO", :onclick => "validate_query();" %>
+  <% end %>
+
+  <script type='text/javascript'>
+    function validate_query() {
+      if($("#query").val() == '') {
+        alert("请输入要搜索的内容");
+      }
+    }
+  </script>

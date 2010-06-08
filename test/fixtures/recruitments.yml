@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  address: MyString
+  amount: 1
+  salary: 1
+  ended_at: 2010-05-26
+  description: MyText
+
+two:
+  title: MyString
+  address: MyString
+  amount: 1
+  salary: 1
+  ended_at: 2010-05-26
+  description: MyText

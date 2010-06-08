@@ -1,0 +1,28 @@
+<p>
+  <b>产品名称:</b>
+  <%=h @order.product.name %>
+</p>
+
+<p>
+  <b>预定数量:</b>
+  <%=h @order.amount %>
+</p>
+
+<p>
+  <b>预定说明:</b>
+  <%=h @order.description %>
+</p>
+
+<p>
+  <b>预定日期:</b>
+  <%=h @order.preorder_date %>
+</p>
+
+<% if can? :manage, @order %>
+  <%= link_to '编辑', edit_order_path(@order) %> |
+  <%= link_to '删除', @order, :confirm => "确定删除么？", :method => :delete %> | 
+<% end %>
+
+<% if can? :index, Order %>
+  <%= link_to '订单列表', orders_path %>
+<% end %>

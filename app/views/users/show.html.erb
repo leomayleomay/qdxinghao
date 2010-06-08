@@ -1,0 +1,12 @@
+<%= h @user.login%> | <%= h @user.email %> | <%= @user.role %> <br />
+
+<br>
+<br>
+
+<% if can? :edit, @user %>
+  <%= link_to "编辑", edit_user_path(@user) %> |
+<% end %>
+
+<% if can? :destroy, @user %>
+  <%= link_to '删除', @user, :confirm => '您确定删除么?', :method => :delete %>
+<% end %>

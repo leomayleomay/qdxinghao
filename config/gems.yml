@@ -1,0 +1,10 @@
+--- 
+- :name: cancan
+- :name: acts_as_tree
+- :name: paperclip
+- :name: tiny_mce
+- :name: searchlogic
+- :name: will_paginate
+- :name: formtastic
+- :version: 2.3.5
+  :name: rails

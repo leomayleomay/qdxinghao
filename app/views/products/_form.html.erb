@@ -1,0 +1,22 @@
+<% semantic_form_for(@product, :html => {:multipart => true}) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :name, :label => "名称" %>
+    <%= f.input :serial_number, :label => "编号" %>
+    <%= f.input :model, :label => "型号" %>
+    <%= f.input :price, :label => "价格" %>
+    <%= f.input :vendor, :label => "生产厂家" %>
+    <%= f.input :category_ids, 
+                :label => "所属类别", 
+                :as => :check_boxes, 
+                :collection => Category.for("product") %>
+    <%= f.input :highlighted, :label => "是否在主页显示", :as => :radio, :collection => [["是", true], ["否", false]] %>
+    <%= f.input :image, :label => "图片", :as => :file %>
+    <%= f.input :description, :label => "介绍", :input_html => {:class => "mceEditor"} %>
+  <% end %>
+  
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>
+
+<%= link_to '产品列表', products_path %>

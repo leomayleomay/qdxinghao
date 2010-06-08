@@ -1,0 +1,28 @@
+<h3>订单列表</h3>
+
+<br/>
+
+<table border='0' cellspacing='0' cellpadding='0' id="data">
+  <tr>
+    <th>产品名称</th>
+    <th>预定数量</th>
+    <th>预定说明</th>
+    <th>预定日期</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%=h order.product_id %></td>
+    <td><%=h order.amount %></td>
+    <td><%=h order.description.first(10) %> ...</td>
+    <td><%=h order.preorder_date %></td>
+    <td><%= link_to '详情', order %></td>
+    <% if can? :edit, order %>
+      <td><%= link_to '编辑', edit_order_path(order) %></td>
+    <% end %>
+    <% if can? :destroy, order %>
+      <td><%= link_to '删除', order, :confirm => '确定删除么?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

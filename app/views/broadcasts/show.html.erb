@@ -1,0 +1,26 @@
+<%= sidebar_for("Broadcast") %>
+
+<h3><%= h @broadcast.title %></h3>
+
+<br />
+<br />
+
+新闻来源：<%= h @broadcast.source%> 点击数：<%= h @broadcast.hits.size %> 更新时间：<%= h @broadcast.updated_at %>
+
+<hr>
+
+<br />
+<br />
+
+<%= @broadcast.body %>
+
+<hr style="border:dotted;">
+
+<%= neighbours(@broadcast)%>
+
+<% if can? :manage, @broadcast %>
+  <p>
+    <%= link_to "编辑", edit_broadcast_path(@broadcast) %> |
+    <%= link_to "删除", @broadcast, :method => :delete, :confirm => "确定删除?" %>
+  </p>
+<% end %>

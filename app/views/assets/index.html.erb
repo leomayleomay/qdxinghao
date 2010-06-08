@@ -1,0 +1,27 @@
+<%= sidebar_for("Asset") %>
+<%= title("下载中心")%>
+
+<h3>资源列表</h3>
+
+<br />
+
+<table border='0' cellspacing='0' cellpadding='0' id="data">
+  <tr>
+    <th>资源名称</th>
+  </tr>
+
+<% @assets.each do |asset| %>
+  <tr>
+    <td><%=h asset.name %></td>
+    <td><%= link_to '详情', asset %></td>
+    <% if can? :manage, asset %>
+      <td><%= link_to '编辑', edit_asset_path(asset) %></td>
+      <td><%= link_to '删除', asset, :confirm => '确定删除么?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+
+  <tr>
+    <th class="pagination" colspan="5"><%= will_paginate @assets %></th>
+  </tr>
+</table>

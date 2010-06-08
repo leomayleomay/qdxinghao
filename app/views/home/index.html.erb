@@ -1,0 +1,34 @@
+<% content_for :head do %>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#tabs").tabs();
+    });
+
+    $(function() {
+      $("a.rjs").click( function() {
+        $.ajax({
+          url: this.href,
+          dataType: "script",
+          beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");}
+        });
+        return false;
+      });
+    });
+  </script>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= image_tag "tubes.jpg" %> 
+  <%= image_tag "sales_hotline.gif", :alt => '销售热线'%>
+<% end %>
+
+<div id="tabs">
+  <ul>
+    <li><a href="/home/broadcasts_highlight?class=rjs" title="企业新闻"><span>企业新闻</span></a></li>
+    <li><a href="/home/products_highlight?class=rjs" title="产品展示"><span>产品展示</span></a></li>
+    <li><a href="/home/pages_highlight?class=rjs" title="企业简介"><span>企业简介</span></a></li>
+  </ul>
+</div>

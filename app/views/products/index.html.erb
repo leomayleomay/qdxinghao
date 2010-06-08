@@ -1,0 +1,20 @@
+<%= sidebar_for("Product") %>
+
+<ul id="asset_list">
+<% @products.each do |product| %>
+  <li id="asset_<%=product.id%>">
+    <%= link_to image_tag(product.image(:thumb)), product %>
+    <span><%= link_to product.name, product %></span>
+    <% if can? :edit, product %>
+      <br/><span><%= link_to '编辑', edit_product_path(product) %></span>
+    <% end %>
+    <% if can? :delete, product %>
+      | <span><%= link_to '删除', product, :confirm => "确定删除么？", :method => "delete" %></span>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+
+<br />
+
+<%= will_paginate @products %>

@@ -1,0 +1,17 @@
+<% semantic_form_for(@broadcast) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :title, :label => "名称" %>
+    <%= f.input :source, :label => "来源" %>
+    <%= f.input :category_ids, 
+                :label => "所属类别", 
+                :as => :check_boxes, 
+                :collection => Category.for("broadcast") %>
+    <%= f.input :highlighted, :label => "是否在主页显示", :as => :radio, :collection => [["是", true], ["否", false]] %>
+    <%= f.input :body, :label => "内容", :input_html => {:class => "mceEditor"}%>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>
+
+<%= link_to '新闻列表', broadcasts_path %>

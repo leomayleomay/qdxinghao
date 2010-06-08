@@ -1,0 +1,215 @@
+/*---------------------------------  Styles.css  ---*/ 
+
+body {
+  background-color: #BFC1C4;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 80%;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
+#page {
+  margin: 15px auto;
+  width: 900px;
+  text-align: left;
+  border: 2px solid #9EA3AC;
+  padding: 5px;
+  background-color: #FFFFFF;
+  clear: both; }
+
+#header {
+  color: #FFFFFF;
+  font-family: Arial,Helvetica,Geneva,sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 0.72em;
+  text-transform: uppercase; }
+
+#main {
+  background-color: white;
+  float: left;
+  width: 100%;
+  margin: 15px 0px 30px; }
+
+h1 {
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 0.72em;
+  text-transform: uppercase; }
+
+h2 {
+  color: #cc0000;
+  font-family: Georgia, sans-serif;
+  font-size: 270%;
+  font-weight: normal;
+  margin: 0px; }
+
+h3 {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 195%;
+  margin: 0px;
+  font-weight: bold; 
+  text_align: center;
+  color: #cc0000; }
+
+h3 a {
+  color: #451811;
+  text-decoration: none;
+  border-bottom: none;
+  margin: 0px; }
+
+a {
+  color: #cc0000;
+  text-decoration: none;}
+
+p {
+  color: #232323;
+  font-family: Georgia, Times, "Times New Roman";
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin: 0px 0px 10px; }
+
+ul {
+  padding: 0; }
+
+li {
+  padding: 0; }
+
+
+/*---MAIN COLUMN---*/  
+
+#content-wrapper {
+  float: right;
+  width: 680px; }
+
+#content {
+  padding: 0px 15px; }
+
+
+/*---SIDEBAR---*/  
+
+#sidebar-wrapper {
+  float: left;
+  width: 220px; }
+
+#sidebar {
+  font-size: 100%;
+  padding: 15px;
+  padding-top: 0px; }
+
+#sidebar h3 {
+  color: #222222;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0px; }
+
+#sidebar p {
+  line-height: 2em; }
+
+/*---FOOTER---*/ 
+
+#footer-wrapper {
+  margin: 5px auto;
+  width: 900px; }
+
+#footer {
+  color: #595452;
+  float: right;
+  font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 70%;
+  margin-bottom: 30px; }
+
+
+/*---------------------------------  Navigation.css  ---*/ 
+
+#nav {
+  height: 38px;
+  background: transparent url(http://spurrd.com/assets/132/nav-background.gif) repeat-x top left; }
+
+#nav ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: auto; }
+
+#nav ul li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+#nav ul li a {
+  font-family: "Lucida Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  display: block;
+  float: left;
+  color: #3D3D3D;
+  text-decoration: none;
+  padding: 8px 16px 7px;
+  border-bottom: none;
+  background: transparent url(http://spurrd.com/assets/150/nav-divider.gif) no-repeat top right; }
+
+#nav ul li a:hover {
+  color: #FFFFFF;
+  background: #49140c;
+  border-bottom: 1px solid #49140c; }
+
+#nav ul li.selected a {
+  color: #FFFFFF;
+  background: #cc0000;
+  border-bottom: 1px solid #0b0b0a; }
+
+
+/******************************
+*  Thumbnails
+******************************/
+
+#asset_list {
+  list-style-type: none;
+  margin: 0; padding: 0;
+}
+
+#asset_list li {
+  float: left;
+  padding: 8px;
+  width: 216px;
+  voice-family: "\"}\""; 
+  voice-family:inherit;
+  width: 200px; }
+
+#asset_list li a img, 
+#asset_list li a:visited img {
+  display: block;
+  margin-bottom: 5px;
+  border: 0;
+  border-bottom: 4px solid #3B1E33; }
+
+#asset_list li a:hover img {
+  background-color: black;
+  border-bottom: 4px solid white; }
+
+#asset_list li small {
+  display: block; }
+
+/******************************
+* Account 
+******************************/
+#account {
+  font-size: 80%;
+  margin: 10px 0 0 0;
+}
+
+#logo {
+  float: left;
+}
+
+#banner {
+  float: right;
+}

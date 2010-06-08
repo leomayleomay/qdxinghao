@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  product_id: 1
+  amount: 1
+  description: MyText
+  preorder_date: 2010-05-25
+  purchaser_name: MyString
+  purchaser_gender: false
+  purchaser_company_name: MyString
+  purchaser_zipcode: MyString
+  purchaser_mobile: MyString
+  purchaser_fax: MyString
+  purchaser_email: MyString
+
+two:
+  product_id: 1
+  amount: 1
+  description: MyText
+  preorder_date: 2010-05-25
+  purchaser_name: MyString
+  purchaser_gender: false
+  purchaser_company_name: MyString
+  purchaser_zipcode: MyString
+  purchaser_mobile: MyString
+  purchaser_fax: MyString
+  purchaser_email: MyString
