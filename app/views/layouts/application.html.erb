@@ -3,6 +3,7 @@
     <%= stylesheet_link_tag "style"%>
     <%= stylesheet_link_tag 'jquery.treeview' %>
     <%= stylesheet_link_tag 'flash', 'table'%>
+    <%= javascript_include_tag "flashobject" %>
     <%= javascript_include_tag 'jquery.min', 'jquery.cycle', 'jquery.treeview.min', 'custom', 'flash'%>
 
     <%= include_tiny_mce_if_needed %>
@@ -11,10 +12,6 @@
     <%= yield :head%>
 
     <title>青岛星海精细化工有限责任公司 - <%= yield(:title) %></title>
-
-    <script type='text/javascript'>
-      $('#slideshow').cycle({fx:'fade', speed:'fast', timeout:2000, next:'#next', prev:'#prev'});
-    </script>
   </head>
 
   <body>
@@ -24,6 +21,7 @@
         <%= image_tag "logo.jpg", :width => "300px", :alt => "DoubleStar"%>
         <%= image_tag "banner.jpg", :width => "900px", :alt => "星海精细化工"%>
       </div>
+
       <div id="nav">
         <ul>
           <li class=<%= "selected" if params[:controller] == "home" %>><%= link_to "站点首页", root_path %></li>
@@ -39,6 +37,8 @@
           <li><%= render :partial => "common/search"%></li>
         </ul>
       </div>
+
+      <%= flashobject_tag "/swfs/slides.swf", :size => "900x131" %>
 
       <div id="main"> 
         <div id="content-wrapper"> 
