@@ -1,0 +1,18 @@
+<% content_for(:head) do %>
+  <%= javascript_include_tag 'galleria/src/galleria'%>
+  <%= javascript_include_tag 'galleria/src/themes/classic/galleria.classic'%>
+<% end %>
+
+<h3>企业风貌</h3>
+
+<br>
+
+<div id='gallery'>
+  <% 1.upto(9) do |i| %>
+    <%= image_tag "scenes/#{i}.jpg" %>
+  <% end %>
+</div>
+
+<script>
+  $('#gallery').galleria({ image_crop: true, transition: 'fade', autoplay: true, carousel: false });
+</script>

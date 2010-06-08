@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>Galleria Fullscreen Theme Demo 01</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="../src/galleria.js"></script>
+        <script src="../src/plugins/galleria.flickr.js"></script>
+        <style>
+        /* any custom CSS will override the theme. Here I will enlarge the thumbnails: */
+        .galleria-thumbnails .galleria-image{width:90px;height:60px;}
+        .galleria-thumbnails-list{height:60px;}
+        .galleria-thumb-nav-left,
+        .galleria-thumb-nav-right{height:55px;}
+        </style>
+    </head>
+<body>
+    <div id="galleria"></div>
+    <script>
+    // Load theme
+    Galleria.loadTheme('../src/themes/fullscreen/galleria.fullscreen.js');
+    
+    // initialize flickr plugin
+    var flickr = new Galleria.Flickr('fddd7bc223fe37295faace93a4f2d8fc');
+    
+    // search for photos tagged 'cigarette' and apply galleria
+    flickr.getTags('cigarette', { 
+        size: 'big'
+    }, function(data) {
+        $('#galleria').galleria({
+            data_source:data,
+            carousel_steps: 3 // will advance the carousel 3 steps when clicking the arrow
+        });
+    });
+    
+    </script>
+    </body>
+</html>

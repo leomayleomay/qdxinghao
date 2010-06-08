@@ -4,7 +4,7 @@
     <%= stylesheet_link_tag 'jquery.treeview' %>
     <%= stylesheet_link_tag 'flash', 'table'%>
     <%= javascript_include_tag "flashobject" %>
-    <%= javascript_include_tag 'jquery.min', 'jquery.cycle', 'jquery.treeview.min', 'custom', 'flash'%>
+    <%= javascript_include_tag 'jquery.min', 'jquery.treeview.min', 'custom', 'flash'%>
 
     <%= include_tiny_mce_if_needed %>
     <%= formtastic_stylesheet_link_tag %>
@@ -46,7 +46,7 @@
             <% flash.each do |key, msg| %>
               <p class="<%=key%>"><%= h msg%><span>X</span></p>
             <% end %>
-            <p><small><%= render_crumbs unless %w(home sessions users categories orders search).include?(controller_name) %></small></p>
+            <p><small><%= render_crumbs unless %w(home sessions users categories orders pictures search).include?(controller_name) %></small></p>
             <%= yield %>
           </div>
         </div>
