@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   filter_parameter_logging :password, :password_confirmation
 
-  add_crumb "首页", "/"
+  add_crumb "首页", "/home"
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "您无权进行此项操作."

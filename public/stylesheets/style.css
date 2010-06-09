@@ -196,14 +196,14 @@ li {
   list-style-type: none;
 }
 
-.product {
+.product_item {
   float: left;
   width: 180px;
   margin: 4px 4px 4px 4px;
   text-align: center; 
 }
 
-.product img {
+.product_item img {
   border: 0.5px solid rgb(204,204,204);
   padding: 10px;
 }

@@ -3,7 +3,7 @@
 <div id='products'>
 <ul>
 <% @products.each do |product| %>
-  <li class='product'>
+  <li class='product_item'>
     <%= link_to image_tag(product.image(:thumb)), product %><br>
     <span><%= link_to product.name, product %></span>
     <% if can? :manage, product %>
