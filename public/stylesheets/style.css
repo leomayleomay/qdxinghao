@@ -129,9 +129,10 @@ li {
   width: 980px; }
 
 #footer {
+  text-align: left;
   color: #595452;
   float: right;
-  font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  font-family: "宋体";
   font-size: 70%;
   margin-bottom: 30px; }
 
