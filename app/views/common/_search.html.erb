@@ -1,6 +1,6 @@
 <% form_tag(search_path, :method => "get") do %>
-  <%= text_field_tag(:query, '', :size => 10)%>
-  <%= select_tag (:object, options_for_select([['产品', "product"], ['新闻', "broadcast"], ['下载', "asset"]]))%>
+  <%= label_tag ''%><%= text_field_tag(:query, '', :size => 10)%>
+  <%= label_tag ''%><%= select_tag (:object, options_for_select([['产品', "product"], ['新闻', "broadcast"], ['下载', "asset"]]))%>
   <%= submit_tag "GO", :onclick => "validate_query();" %>
 <% end %>
 
