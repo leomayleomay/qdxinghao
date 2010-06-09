@@ -18,11 +18,13 @@ module ApplicationHelper
 
     content_for(:sidebar) do
       if can? :create, object.constantize
-        html = link_to("创建#{objects[object]}", :action => "new") + 
-               "<br/>" +
-               link_to("#{objects[object]}列表", :action => "index")
-        html += "<br/>" + link_to("订单列表", orders_path) if object == 'Product'
-        html
+        content_tag :div, :class => "list" do
+          list = content_tag :li, link_to("创建#{objects[object]}", :action => "new")
+          list += content_tag :li, link_to("#{objects[object]}列表", :action => "index")
+          list += content_tag :li, link_to("订单列表", orders_path) if object == 'Product'
+
+          content_tag :ul, list
+        end
       else
         render :partial => "sidebar"
       end
