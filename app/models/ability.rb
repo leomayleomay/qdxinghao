@@ -7,6 +7,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
       can [:create, :update, :destroy], [Page, Broadcast, Product, Asset, Recruitment]
+      can [:edit, :update], BasicInfo
     else
       can :read, :all
       can :index, Order do |order|

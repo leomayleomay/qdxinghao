@@ -1,0 +1,22 @@
+<h3>设置网站信息</h3>
+
+<br>
+
+<% semantic_form_for(@basic_info) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :website_title, :label => "网站标题" %>
+    <%= f.input :company_name, :label => "公司名称" %>
+    <%= f.input :company_address, :label => "公司地址" %>
+    <%= f.input :company_postcode, :label => "公司邮编" %>
+    <%= f.input :company_phone, :label => "公司电话" %>
+    <%= f.input :company_fax, :label => "公司传真" %>
+    <%= f.input :company_email, :label => "公司电子邮箱" %>
+    <%= f.input :keywords, :label => "关键字", :input_html => {:size => "10x10"}%>
+    <%= f.input :website_description, :label => "网站描述", :input_html => {:size => "10x10"}%>
+    <%= f.input :icp_serial_number, :label => "ICP 备案"%>
+  <% end %>
+  
+  <% f.buttons do %>
+    <%= f.commit_button '确定' %>
+  <% end %>
+<% end %>

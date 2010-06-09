@@ -12,7 +12,7 @@
 
     <%= yield :head%>
 
-    <title>青岛星昊橡塑有限公司- <%= yield(:title) %></title>
+    <title><%= @basic_info.website_title %></title>
   </head>
 
   <body>
@@ -20,7 +20,7 @@
       <%= render :partial => "users/user_bar" %>
       <div id="header">
         <div id='logo'><%= image_tag "logo.jpg", :width => "180px", :alt => "DoubleStar"%></div>
-        <div id='banner'><%= image_tag "banner.jpg", :width => "800px", :alt => "星昊橡塑"%></div>
+        <div id='banner'><%= image_tag "banner.jpg", :width => "800px"%></div>
       </div>
 
       <div id="nav">
@@ -35,6 +35,9 @@
           <% if can? :manage, Category %>
             <li class='<%= "selected" if params[:controller] == "categories" %>'><%= link_to "类别", categories_path %></li>
           <% end %>
+          <% if can? :edit, BasicInfo %>
+            <li class='<%= "selected" if params[:controller] == "basic_infos" %>'><%= link_to "基本信息", edit_basic_info_path(@basic_info) %></li>
+          <% end %>
           <li class='search_box'><%= render :partial => "common/search"%></li>
         </ul>
       </div>
@@ -47,7 +50,7 @@
             <% flash.each do |key, msg| %>
               <p class="<%=key%>"><%= h msg%><span>X</span></p>
             <% end %>
-            <p><small><%= render_crumbs unless %w(home sessions users categories orders pictures search).include?(controller_name) %></small></p>
+            <p><small><%= render_crumbs unless %w(home sessions users categories orders pictures basic_infos search).include?(controller_name) %></small></p>
             <%= yield %>
           </div>
         </div>
@@ -66,8 +69,8 @@
           友情链接:<a href="http://www.doublestar.com.cn">青岛双星集团</a>
         </div>
         <p>
-          青岛星昊橡塑有限公司© 2008-2010 版权所有<a href="http://www.miibeian.gov.cn/">鲁ICP备09029957号</a><br>
-          邮件：fangjingjing1202@163.com 电话：86 0532 82538699　传真：86 0532 82538626 地址：青岛即墨市大信镇新胜庄
+          <%= @basic_info.company_name%>© 2008-2010 版权所有<a href="http://www.miibeian.gov.cn/"><%= @basic_info.icp_serial_number%></a><br>
+          邮件: <%=@basic_info.company_email%> 电话: <%=@basic_info.company_phone%> 传真:<%=@basic_info.company_fax%> 地址: <%=@basic_info.company_name%>
         </p>
       </div> 
     </div>

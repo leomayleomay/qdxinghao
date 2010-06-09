@@ -10,10 +10,17 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   filter_parameter_logging :password, :password_confirmation
 
+  before_filter :get_basic_info
+
   add_crumb "首页", "/home"
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "您无权进行此项操作."
     redirect_to home_url
+  end
+
+  private
+  def get_basic_info
+    @basic_info ||= BasicInfo.first
   end
 end

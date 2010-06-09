@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :basic_infos, :only => [:edit, :update]
+
   map.resources :pictures, :only => [:index]
 
   map.resources :messages

@@ -34,3 +34,14 @@ Category.create(:name => "双星乳胶漆", :model => "product", :parent_id => p
 p = Category.create(:name => "下载中心", :model => "asset")
 Category.create(:name => "产品相关", :model => "asset", :parent_id => p.id)
 Category.create(:name => "资源文件", :model => "asset", :parent_id => p.id)
+
+BasicInfo.create(:website_title => "请填写网站标题...",
+                 :company_name => "请填写公司名称...",
+                 :company_address => "请填写公司地址...",
+                 :company_postcode => "请填写公司邮编...",
+                 :company_phone => "请填写公司电话...",
+                 :company_fax=> "请填写公司传真",
+                 :company_email => "请填写公司电子邮箱...",
+                 :keywords => "请填写关键字...",
+                 :website_description => "请填写网站描述...",
+                 :icp_serial_number => "请填写ICP备案编号...")
