@@ -125,17 +125,24 @@ li {
 /*---FOOTER---*/ 
 
 #footer-wrapper {
+  border-top: 1px solid #cc0000;
   margin: 5px auto;
   width: 980px; }
 
 #footer {
   text-align: left;
   color: #595452;
-  float: right;
+  float: left;
   font-family: "宋体";
   font-size: 70%;
   margin-bottom: 30px; }
 
+#partner {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 /*---------------------------------  Navigation.css  ---*/ 
 
@@ -204,6 +211,7 @@ li {
 #account {
   float:right;
   margin-top: 10px;
+  margin-right: 100px;
 }
 
 #tabs span {

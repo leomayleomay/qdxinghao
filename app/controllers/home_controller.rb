@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  def welcome
+    render :layout => false
+  end
+
   def pages_highlight
     @page = Page.first
   end

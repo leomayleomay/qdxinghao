@@ -1,0 +1,13 @@
+<%= javascript_include_tag "flashobject"%>
+
+<style type='text/css'>
+  #welcome {
+    margin-top: 60px;
+    text-align: center;
+  }
+</style>
+
+<div id='welcome'>
+  <%= flashobject_tag "/swfs/welcome.swf", :size => "900x380"%>
+  <span><%= link_to "跳过动画直接进入", home_url %></span>
+</div>

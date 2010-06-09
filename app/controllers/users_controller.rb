@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     
     if @user.destroy
       flash[:notice] = "删除成功！"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
 end

@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "您无权进行此项操作."
-    redirect_to root_url
+    redirect_to home_url
   end
 end

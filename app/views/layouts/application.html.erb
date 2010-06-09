@@ -25,7 +25,7 @@
 
       <div id="nav">
         <ul>
-          <li class='<%= "selected" if params[:controller] == "home" %>'><%= link_to "站点首页", root_path %></li>
+          <li class='<%= "selected" if params[:controller] == "home" %>'><%= link_to "站点首页", home_path %></li>
           <li class='<%= "selected" if params[:controller] == "pages" %>'><%= link_to "关于我们", "/about_us/公司简介" %></li>
           <li class='<%= "selected" if params[:controller] == "broadcasts" %>'><%= link_to "新闻中心", broadcasts_path %></li>
           <li class='<%= "selected" if params[:controller] == "products" %>'><%= link_to "产品展示", products_path %></li>
@@ -62,11 +62,11 @@
 
     <div id="footer-wrapper">
       <div id="footer">
-        <p>
+        <div id='partner'>
           友情链接:<a href="http://www.doublestar.com.cn">青岛双星集团</a>
-        </p>
+        </div>
         <p>
-          青岛星昊橡塑有限公司© 2008-2010 版权所有<a href="http://www.miibeian.gov.cn/">鲁ICP备09029957号</a>
+          青岛星昊橡塑有限公司© 2008-2010 版权所有<a href="http://www.miibeian.gov.cn/">鲁ICP备09029957号</a><br>
           邮件：fangjingjing1202@163.com 电话：86 0532 82538699　传真：86 0532 82538626 地址：青岛即墨市大信镇新胜庄
         </p>
       </div> 

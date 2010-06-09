@@ -20,7 +20,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :pages
 
-  map.root :controller => "home", :action => "index"
+  map.root :controller => "home", :action => "welcome"
+  map.home '/home', :controller=> "home", :action => "index"
+
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
