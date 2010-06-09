@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   has_many :orders, :dependent => :destroy
   has_many :purchasers, :class_name => "User", :through => "orders"
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "150x150>" }
   validates_attachment_presence :image
   validates_presence_of :name, :serial_number, :model, :price, :description, :vendor
   validates_numericality_of :price, :greater_than => 0

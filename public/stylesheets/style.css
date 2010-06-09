@@ -1,30 +1,40 @@
 /*---------------------------------  Styles.css  ---*/ 
 
 body {
-  background-color: #BFC1C4;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  font-family: '宋体';
   font-size: 80%;
   padding: 0;
   margin: 0;
   text-align: center; }
 
 #page {
-  margin: 15px auto;
-  width: 900px;
+  margin: auto;
+  width: 980px;
   text-align: left;
-  border: 2px solid #9EA3AC;
   padding: 5px;
   background-color: #FFFFFF;
   clear: both; }
 
 #header {
   color: #FFFFFF;
-  font-family: Arial,Helvetica,Geneva,sans-serif;
+  font-family: '宋体';
   font-size: 35px;
   font-weight: bold;
   letter-spacing: 0.02em;
   line-height: 0.72em;
-  text-transform: uppercase; }
+}
+
+#logo {
+  float: left;
+  height: 62px;
+}
+  
+#banner {
+  float: left;
+  height: 50px;
+  margin-top: 12px;
+}
 
 #main {
   background-color: white;
@@ -84,7 +94,7 @@ li {
 
 #content-wrapper {
   float: right;
-  width: 680px; }
+  width: 760px; }
 
 #content {
   padding: 0px 15px; }
@@ -98,24 +108,25 @@ li {
 
 #sidebar {
   font-size: 100%;
-  padding: 15px;
+  padding: 0px;
   padding-top: 0px; }
 
-#sidebar h3 {
-  color: #222222;
-  font-family: Helvetica, Arial, Verdana, sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  margin: 0px; }
+#sidebar .list ul {
+  list-style-image: url('/images/arrow.gif');
+}
 
-#sidebar p {
-  line-height: 2em; }
+#sidebar .list li {
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dotted #49140c;
+}
 
 /*---FOOTER---*/ 
 
 #footer-wrapper {
   margin: 5px auto;
-  width: 900px; }
+  width: 980px; }
 
 #footer {
   color: #595452;
@@ -128,6 +139,7 @@ li {
 /*---------------------------------  Navigation.css  ---*/ 
 
 #nav {
+  margin-top: 62px;
   height: 38px;
   background: transparent url(http://spurrd.com/assets/132/nav-background.gif) repeat-x top left; }
 
@@ -166,50 +178,24 @@ li {
   background: #cc0000;
   border-bottom: 1px solid #0b0b0a; }
 
-
-/******************************
-*  Thumbnails
-******************************/
-
-#asset_list {
-  list-style-type: none;
-  margin: 0; padding: 0;
-}
-
-#asset_list li {
-  float: left;
-  padding: 8px;
-  width: 216px;
-  voice-family: "\"}\""; 
-  voice-family:inherit;
-  width: 200px; }
-
-#asset_list li a img, 
-#asset_list li a:visited img {
-  display: block;
-  margin-bottom: 5px;
-  border: 0;
-  border-bottom: 4px solid #3B1E33; }
-
-#asset_list li a:hover img {
-  background-color: black;
-  border-bottom: 4px solid white; }
-
-#asset_list li small {
-  display: block; }
-
-/******************************
-* Account 
-******************************/
-#account {
-  font-size: 80%;
-  margin: 10px 0 0 0;
-}
-
-#logo {
-  float: left;
-}
-
-#banner {
+#nav ul li.search_box {
   float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#products ul {
+  list-style-type: none;
+}
+
+.product {
+  float: left;
+  width: 180px;
+  margin: 4px 4px 4px 4px;
+  text-align: center; 
+}
+
+.product img {
+  border: 0.5px solid rgb(204,204,204);
+  padding: 10px;
 }

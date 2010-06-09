@@ -2,10 +2,6 @@
 
 <% @broadcasts.each do |broadcast| %>
   <p class="broadcast"><%= link_to broadcast.title, broadcast %><span>浏览次数:<%= broadcast.hits.size%></span></p>
-  <p> 
-    <small>新闻概要:</small><br />
-    <%= broadcast.body %>
-  </p>
   <% if can? :manage, broadcast%>
     <%= link_to '编辑', edit_broadcast_path(broadcast) %> |
     <%= link_to '删除', broadcast, :confirm => '确定删除么?', :method => :delete %>

@@ -1,14 +1,10 @@
 <div id="account">
 <% if logged_in? -%>
-  <p>
     您好, <%= link_to_current_user :content_method => :login %>
     <%= link_to " | 登出", logout_path, { :title => "Log out" } %> 
     <%= link_to " | 用户管理", users_path if can?(:manage, User) %>
-  </p>
 <% else -%>
-  <p>
     <%= link_to "登入",  login_path,  { :title => "Log in" } %>
     <%= link_to " | 注册", signup_path, { :title => "Create an account" } %>
-  </p>
 <% end -%>
 </div>

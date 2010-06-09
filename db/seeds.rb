@@ -23,12 +23,14 @@ Category.create(:name => "行业新闻", :model => "broadcast", :parent_id => ne
 
 Broadcast.create(:title => "网站开通", :body => "网站开通", :category_ids => [news_center.id], :highlighted => true)
 
-Category.create(:name => "鞋用胶粘剂", :model => "product")
-Category.create(:name => "轮胎行业助剂", :model => "product")
-p = Category.create(:name => "乳胶漆", :model => "product")
-Category.create(:name => "双星乳胶漆", :model => "product", :parent_id => p.id)
-Category.create(:name => "硫化橡胶多色底", :model => "product")
-Category.create(:name => "混炼料", :model => "product")
+p = Category.create(:name => "产品中心", :model => "product")
+Category.create(:name => "鞋用胶粘剂", :model => "product", :parent_id => p.id)
+Category.create(:name => "轮胎行业助剂", :model => "product", :parent_id => p.id)
+Category.create(:name => "硫化橡胶多色底", :model => "product", :parent_id => p.id)
+Category.create(:name => "混炼料", :model => "product", :parent_id => p.id)
+pp = Category.create(:name => "乳胶漆", :model => "product", :parent_id => p.id)
+Category.create(:name => "双星乳胶漆", :model => "product", :parent_id => pp.id)
 
-Category.create(:name => "产品相关", :model => "asset")
-Category.create(:name => "资源文件", :model => "asset")
+p = Category.create(:name => "下载中心", :model => "asset")
+Category.create(:name => "产品相关", :model => "asset", :parent_id => p.id)
+Category.create(:name => "资源文件", :model => "asset", :parent_id => p.id)

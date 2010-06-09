@@ -18,8 +18,8 @@
     <%= render :partial => "users/user_bar" %>
     <div id="page">
       <div id="header">
-        <%= image_tag "logo.jpg", :width => "300px", :alt => "DoubleStar"%>
-        <%= image_tag "banner.jpg", :width => "900px", :alt => "星海精细化工"%>
+        <div id='logo'><%= image_tag "logo.jpg", :width => "180px", :alt => "DoubleStar"%></div>
+        <div id='banner'><%= image_tag "banner.jpg", :width => "800px", :alt => "星海精细化工"%></div>
       </div>
 
       <div id="nav">
@@ -34,11 +34,11 @@
           <% if can? :manage, Category %>
             <li class=<%= "selected" if params[:controller] == "categories" %>><%= link_to "类别", categories_path %></li>
           <% end %>
-          <li><%= render :partial => "common/search"%></li>
+          <li class='search_box'><%= render :partial => "common/search"%></li>
         </ul>
       </div>
 
-      <%= flashobject_tag "/swfs/slides.swf", :size => "900x131" %>
+      <%= flashobject_tag "/swfs/slides.swf", :size => "980x150" %>
 
       <div id="main"> 
         <div id="content-wrapper"> 
@@ -52,9 +52,7 @@
         </div>
         <div id="sidebar-wrapper"> 
           <div id="sidebar"> 
-            <div class="spot">
-              <p><%= yield :sidebar%></p>
-            </div> 
+            <%= yield :sidebar%>
           </div>
         </div>
       </div>
