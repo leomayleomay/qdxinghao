@@ -1,3 +1,4 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <%= stylesheet_link_tag "style"%>
@@ -24,15 +25,15 @@
 
       <div id="nav">
         <ul>
-          <li class=<%= "selected" if params[:controller] == "home" %>><%= link_to "站点首页", root_path %></li>
-          <li class=<%= "selected" if params[:controller] == "pages" %>><%= link_to "关于我们", "/about_us/公司简介" %></li>
-          <li class=<%= "selected" if params[:controller] == "broadcasts" %>><%= link_to "新闻中心", broadcasts_path %></li>
-          <li class=<%= "selected" if params[:controller] == "products" %>><%= link_to "产品展示", products_path %></li>
-          <li class=<%= "selected" if params[:controller] == "assets" %>><%= link_to "资源下载", assets_path %></li>
-          <li class=<%= "selected" if params[:controller] == "recuritments" %>><%= link_to "人才招聘", recruitments_path %></li>
-          <li class=<%= "selected" if params[:controller] == "messages" %>><%= link_to "信息反馈", messages_path %></li>
+          <li class='<%= "selected" if params[:controller] == "home" %>'><%= link_to "站点首页", root_path %></li>
+          <li class='<%= "selected" if params[:controller] == "pages" %>'><%= link_to "关于我们", "/about_us/公司简介" %></li>
+          <li class='<%= "selected" if params[:controller] == "broadcasts" %>'><%= link_to "新闻中心", broadcasts_path %></li>
+          <li class='<%= "selected" if params[:controller] == "products" %>'><%= link_to "产品展示", products_path %></li>
+          <li class='<%= "selected" if params[:controller] == "assets" %>'><%= link_to "资源下载", assets_path %></li>
+          <li class='<%= "selected" if params[:controller] == "recuritments" %>'><%= link_to "人才招聘", recruitments_path %></li>
+          <li class='<%= "selected" if params[:controller] == "messages" %>'><%= link_to "信息反馈", messages_path %></li>
           <% if can? :manage, Category %>
-            <li class=<%= "selected" if params[:controller] == "categories" %>><%= link_to "类别", categories_path %></li>
+            <li class='<%= "selected" if params[:controller] == "categories" %>'><%= link_to "类别", categories_path %></li>
           <% end %>
           <li class='search_box'><%= render :partial => "common/search"%></li>
         </ul>
