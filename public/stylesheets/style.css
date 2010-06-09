@@ -139,7 +139,7 @@ li {
 /*---------------------------------  Navigation.css  ---*/ 
 
 #nav {
-  margin-top: 62px;
+  margin-top: 90px;
   height: 38px;
   background: transparent url(http://spurrd.com/assets/132/nav-background.gif) repeat-x top left; }
 
@@ -201,5 +201,11 @@ li {
 }
 
 #account {
+  float:right;
   margin-top: 10px;
+}
+
+#tabs span {
+  color: #cc0000;
+  font-weight: bold;
 }
