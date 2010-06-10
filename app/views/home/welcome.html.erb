@@ -1,17 +1,24 @@
-<%= javascript_include_tag "flashobject"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <%= javascript_include_tag "flashobject"%>
 
-<style type='text/css'>
-  body {
-    background: rgb(204, 204, 204);
-  }
+    <style type='text/css'>
+      body {
+        background: rgb(204, 204, 204);
+      }
 
-  #welcome {
-    margin-top: 60px;
-    text-align: center;
-  }
-</style>
+      #welcome {
+        margin-top: 60px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
 
-<div id='welcome'>
-  <%= flashobject_tag "/swfs/welcome.swf", :size => "900x380"%>
-  <span><%= link_to "跳过动画直接进入", home_url %></span>
-</div>
+    <div id='welcome'>
+      <%= flashobject_tag "/swfs/welcome.swf", :size => "900x380"%>
+      <span><%= link_to "跳过动画直接进入", home_url %></span>
+    </div>
+  </body>
+</html>
