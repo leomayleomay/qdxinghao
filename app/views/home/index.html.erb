@@ -6,17 +6,6 @@
     $(document).ready(function() {
       $("#tabs").tabs();
     });
-
-    $(function() {
-      $("a.rjs").click( function() {
-        $.ajax({
-          url: this.href,
-          dataType: "script",
-          beforeSend: function(xhr) {xhr.setRequestHeader("Accept", "text/javascript");}
-        });
-        return false;
-      });
-    });
   </script>
 <% end %>
 
@@ -27,8 +16,8 @@
 
 <div id="tabs">
   <ul>
-    <li><a href="/home/broadcasts_highlight?class=rjs" title="企业新闻"><span>企业新闻</span></a></li>
-    <li><a href="/home/products_highlight?class=rjs" title="产品展示"><span>产品展示</span></a></li>
-    <li><a href="/home/pages_highlight?class=rjs" title="企业简介"><span>企业简介</span></a></li>
+    <li><a href="/home/broadcasts_highlight" title="企业新闻"><span>企业新闻</span></a></li>
+    <li><a href="/home/products_highlight" title="产品展示"><span>产品展示</span></a></li>
+    <li><a href="/home/pages_highlight" title="企业简介"><span>企业简介</span></a></li>
   </ul>
 </div>
