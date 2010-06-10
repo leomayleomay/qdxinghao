@@ -3,6 +3,7 @@
   <%= javascript_include_tag 'galleria/src/themes/classic/galleria.classic'%>
 <% end %>
 
+<% content_for :scenes do %>
 <h3>企业风貌</h3>
 
 <br>
@@ -13,6 +14,8 @@
   <% end %>
 </div>
 
-<script>
-  $('#gallery').galleria({ image_crop: true, transition: 'fade', autoplay: true, carousel: false });
+<script type='text/javascript'>
+  $('#gallery').galleria({ image_crop: true, transition: 'fade', autoplay: true, carousel: false, height: 700});
 </script>
+
+<% end %>

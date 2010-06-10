@@ -42,7 +42,11 @@
         </ul>
       </div>
 
-      <%= flashobject_tag "/swfs/slides.swf", :size => "980x150" %>
+      <% if controller_name == 'pictures' %>
+        <%= yield :scenes %>
+      <% else %>
+        <%= flashobject_tag "/swfs/slides.swf", :size => "980x150" %>
+      <% end %>
 
       <div id="main"> 
         <div id="content-wrapper"> 
