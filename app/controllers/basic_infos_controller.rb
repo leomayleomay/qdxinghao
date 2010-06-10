@@ -4,18 +4,18 @@ class BasicInfosController < ApplicationController
 
   # GET /basic_infos/1/edit
   def edit
-    @basic_info = BasicInfo.find(params[:id])
+    @basic_info = BasicInfo.first
   end
 
   # PUT /basic_infos/1
   # PUT /basic_infos/1.xml
   def update
-    @basic_info = BasicInfo.find(params[:id])
+    @basic_info = BasicInfo.first
 
     respond_to do |format|
       if @basic_info.update_attributes(params[:basic_info])
         flash[:notice] = '基本信息设置成功！'
-        format.html { redirect_to(edit_basic_info_path(@basic_info)) }
+        format.html { redirect_to(basic_information_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,3 +1,5 @@
+<%= list([["新闻列表", broadcasts_path]])%>
+
 <% semantic_form_for(@broadcast) do |f| %>
   <% f.inputs do %>
     <%= f.input :title, :label => "名称" %>
@@ -13,5 +15,3 @@
     <%= f.commit_button '确定' %>
   <% end %>
 <% end %>
-
-<%= link_to '新闻列表', broadcasts_path %>

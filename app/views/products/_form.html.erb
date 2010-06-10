@@ -1,3 +1,5 @@
+<%= list([["产品列表", products_path], ["订单列表", orders_path]])%>
+
 <% semantic_form_for(@product, :html => {:multipart => true}) do |f| %>
   <% f.inputs do %>
     <%= f.input :name, :label => "名称" %>

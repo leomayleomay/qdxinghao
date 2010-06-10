@@ -1,3 +1,5 @@
+<%= list([["用户列表", users_path]])%>
+
 <% semantic_form_for(@user) do |f| -%>
   <% f.inputs do %>
     <%= f.input :login, :label => "用户名" %>

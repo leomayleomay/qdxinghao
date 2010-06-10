@@ -9,7 +9,7 @@ class RecruitmentsController < ApplicationController
   # GET /recruitments
   # GET /recruitments.xml
   def index
-    @recruitments = Recruitment.all
+    @recruitments = Recruitment.paginate(:page => params[:page], :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,6 +1,10 @@
 <% content_for(:sidebar) do %>
-  <% if can? :manage, User %>
-    <p><%= link_to "创建新用户", new_user_path %></p>
-    <p><%= link_to "用户列表", users_path %></p>
-  <% end %>
+  <div class='list'>
+    <ul>
+    <% if can? :manage, User %>
+      <li><%= link_to "创建新用户", new_user_path %></li>
+      <li><%= link_to "用户列表", users_path %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>

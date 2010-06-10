@@ -1,3 +1,5 @@
+<%= list([["留言列表", messages_path]])%>
+
 <% semantic_form_for(@message) do |f| %>
   <% f.inputs do %>
     <%= f.input :title, :label => "标题" %>
@@ -8,5 +10,3 @@
     <%= f.commit_button '确定' %>
   <% end %>
 <% end %>
-
-<%= link_to '取消', messages_path %>

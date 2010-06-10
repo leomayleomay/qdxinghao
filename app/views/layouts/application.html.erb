@@ -36,7 +36,7 @@
             <li class='<%= "selected" if params[:controller] == "categories" %>'><%= link_to "类别", categories_path %></li>
           <% end %>
           <% if can? :edit, BasicInfo %>
-            <li class='<%= "selected" if params[:controller] == "basic_infos" %>'><%= link_to "基本信息", edit_basic_info_path(@basic_info) %></li>
+            <li class='<%= "selected" if params[:controller] == "basic_infos" %>'><%= link_to "基本信息", basic_information_path %></li>
           <% end %>
           <li class='search_box'><%= render :partial => "common/search"%></li>
         </ul>

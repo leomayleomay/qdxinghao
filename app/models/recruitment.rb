@@ -5,4 +5,7 @@ class Recruitment < ActiveRecord::Base
   validates_length_of :description, :minimum => 2
 
   validates_numericality_of :amount, :salary, :greater_than => 0
+  
+  cattr_reader :per_page
+  @@per_page = 5
 end

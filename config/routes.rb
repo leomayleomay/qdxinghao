@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :basic_infos, :only => [:edit, :update]
+  map.basic_information "/basic_information", :controller => "basic_infos", :action => "edit"
 
   map.resources :pictures, :only => [:index]
 

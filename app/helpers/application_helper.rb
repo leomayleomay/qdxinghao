@@ -55,4 +55,18 @@ module ApplicationHelper
   def title(page_title)
     content_for(:title) { page_title }
   end
+
+  def list(items = {})
+    content_for :sidebar do
+      content_tag :div, :class => "list" do
+        content_tag :ul do
+          items.inject("") do |list, item|
+            list += content_tag :li do 
+                      link_to item.first, item.last
+                    end
+          end
+        end
+      end
+    end
+  end
 end

@@ -1,3 +1,5 @@
+<%= list([["招聘信息列表", recruitments_path]])%>
+
 <% semantic_form_for(@recruitment) do |f| %>
   <% f.inputs do %>
     <%= f.input :title, :label => "职位名称"%>
@@ -12,5 +14,3 @@
     <%= f.commit_button '确定' %>
   <% end %>
 <% end %>
-
-<%= link_to '招聘信息列表', recruitments_path %>
