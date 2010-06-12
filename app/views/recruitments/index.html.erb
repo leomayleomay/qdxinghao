@@ -19,7 +19,7 @@
     <td><%=h recruitment.amount %></td>
     <td><%=h recruitment.salary %></td>
     <td><%=h recruitment.ended_at %></td>
-    <td><%=h recruitment.description %></td>
+    <td><%=recruitment.description %></td>
     <td><%= link_to '详情', recruitment %></td>
     <% if can? :edit, recruitment%>
       <td><%= link_to '编辑', edit_recruitment_path(recruitment) %></td>
