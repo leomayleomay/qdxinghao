@@ -8,7 +8,6 @@
     <th>招聘人数</th>
     <th>月薪水</th>
     <th>截止日期</th>
-    <th>岗位描述</th>
   </tr>
 
 <% @recruitments.each do |recruitment| %>
@@ -19,7 +18,6 @@
     <td><%=h recruitment.amount %></td>
     <td><%=h recruitment.salary %></td>
     <td><%=h recruitment.ended_at %></td>
-    <td><%=recruitment.description %></td>
     <td><%= link_to '详情', recruitment %></td>
     <% if can? :edit, recruitment%>
       <td><%= link_to '编辑', edit_recruitment_path(recruitment) %></td>
