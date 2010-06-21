@@ -12,6 +12,9 @@
 
     <%= yield :head%>
 
+    <META NAME="Keywords" CONTENT="<%= @basic_info.keywords %>" /> 
+    <META NAME="Description" CONTENT="<%= @basic_info.website_description %>"/> 
+
     <title><%= @basic_info.website_title %></title>
   </head>
 
