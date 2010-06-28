@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100609135207) do
+ActiveRecord::Schema.define(:version => 20100628141258) do
 
   create_table "assets", :force => true do |t|
     t.string   "name"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(:version => 20100609135207) do
     t.string   "name"
     t.string   "serial_number"
     t.string   "model"
-    t.float    "price"
+    t.string   "price"
     t.text     "description"
     t.string   "vendor"
     t.boolean  "highlighted",        :default => true
@@ -116,8 +116,8 @@ ActiveRecord::Schema.define(:version => 20100609135207) do
   create_table "recruitments", :force => true do |t|
     t.string   "title"
     t.string   "address"
-    t.integer  "amount"
-    t.integer  "salary"
+    t.string   "amount"
+    t.string   "salary"
     t.date     "ended_at"
     t.text     "description"
     t.datetime "created_at"
